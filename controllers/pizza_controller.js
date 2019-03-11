@@ -2,23 +2,23 @@ var express = require("express");
 
 var router = express.Router();
 
-var burger = require("../models/burger.js");
+var pizza = require("../models/pizza.js");
 
 router.get("/", function(req, res) {
-    burger.selectAll(function(data) {
+    pizza.selectAll(function(data) {
         var hbsObject = {
-            burgers: data
+            pizza: data
         };
         console.log(hbsObject);
         res.render("index", hbsObject);
     });
 });
 
-router.post("/api/burgers", function(req, res) {
-    burger.insertOne([
-        "burger_name", "devoured"
+router.post("/api/pizzas", function(req, res) {
+    pizza.insertOne([
+        "pizza_name", "devoured"
     ], [
-        req.body.burger_name, req.body.devoured
+        req.body.pizza_name, req.body.devoured
     ],  function(result) {
 
             res.json({ id: result.insertId });
@@ -26,12 +26,12 @@ router.post("/api/burgers", function(req, res) {
 
 });
 
-router.put("/api/burgers/:id", function(req, res) {
+router.put("/api/pizzas/:id", function(req, res) {
     var condition = "id = " + req.params.id;
 
     console.log("condition", condition);
 
-    burger.updateOne({
+    pizza.updateOne({
         devoured: req.body.devoured
     }, condition, function(result) {
         if (result.changedRows === 0) {

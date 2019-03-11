@@ -11,11 +11,11 @@
         <div class="col-sm-6">
 
             <ul>
-            {{#each burgers}}
+            {{#each pizza}}
                 {{#unless this.devoured}}
                 <li>
                     <p>
-                        {{this.id}}<span>Pizza Name: </span>{{this.burger_name}} 
+                        {{this.id}}: <span>Pizza Name: </span>{{this.pizza_name}} 
                         <button class="devour-button" data-id="{{id}}" data-devoured="{{devoured}}">Devour it!</button>
                     </p>
                 </li>
@@ -26,10 +26,10 @@
         </div>
 
         <div class="col-sm-6 devoured">
-            {{#each burgers}}
+            {{#each pizza}}
                 {{#if this.devoured}}
                 <l1>
-                    <p>{{this.id}}<span class="label">Name of Pizza: </span>{{this.burger_name}}</p>
+                    <p>{{this.id}}: <span class="label">Name of Pizza: </span>{{this.pizza_name}}</p>
                 </l1>
                 {{/if}}
             {{/each}}
@@ -39,7 +39,7 @@
     <form>
         <div class="form row">
             <div class="col-sm-12">
-                <input type="text" id="burger" class="form-control" placeholder="">
+                <input type="text" id="pizza" class="form-control" placeholder="">
             </div>
         </div>
     </form>
@@ -67,12 +67,11 @@
                 devoured: 1
             };
 
-            $.ajax("/api/burgers/" + id, {
+            $.ajax("/api/pizzas/" + id, {
                 type: "PUT",
                 data: wasDevoured
             }).then(
                 function() {
-                    console.log("Yum");
                     location.reload();
                 }
             );
@@ -81,19 +80,17 @@
         $("#submitButton").on("click", function(event) {
             event.preventDefault();
 
-            var newBurger = {
-                burger_name: $("#burger").val().trim(),
+            var newPizza = {
+                pizza_name: $("#pizza").val().trim(),
                 devoured: 0
             };
 
-            console.log(newBurger);
 
-            $.ajax("/api/burgers", {
+            $.ajax("/api/pizzas/", {
                 type: "POST",
-                data: newBurger
+                data: newPizza
             }).then(
                 function() {
-                    console.log("created new burger");
                     location.reload();
                 }
             );

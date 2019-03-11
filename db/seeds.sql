@@ -1,3 +1,3 @@
-INSERT INTO burgers (burger_name) VALUES ("Juicy Lucy");
-INSERT INTO burgers (burger_name) VALUES ("Buffalo Burger");
-INSERT INTO burgers (burger_name) VALUES ("Impossible Burger");
+INSERT INTO pizzas (pizza_name) VALUES ("Baked Potato Pizza");
+INSERT INTO pizzas (pizza_name) VALUES ("Chicago Deep Dish Pizza");
+INSERT INTO pizzas (pizza_name) VALUES ("Taco Pizza");
