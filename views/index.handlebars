@@ -3,19 +3,38 @@
 
     <div class="row">
         <div class="col-sm-12 text-center">
-            <h1>BURGERS!</h1>
+            <h1>Pizza Passport</h1>
         </div>
     </div>
 
-    <ul>
-    {{#each burgers}}
-        <li>
-            <p><span class="label">ID:</span>{{this.id}}</p>
-            <p><span class="label">Burger Name: </span>{{this.burger_name}}</p>
-            <button class="devour-button" data-id="{{id}}" data-devoured="{{devoured}}">Devour it!</button>
-        </li>
-        {{/each}}
-    </ul>
+    <div class="row">
+        <div class="col-sm-6">
+
+            <ul>
+            {{#each burgers}}
+                {{#unless this.devoured}}
+                <li>
+                    <p>
+                        {{this.id}}<span>Pizza Name: </span>{{this.burger_name}} 
+                        <button class="devour-button" data-id="{{id}}" data-devoured="{{devoured}}">Devour it!</button>
+                    </p>
+                </li>
+                {{/unless}}
+            {{/each}}
+            </ul>
+
+        </div>
+
+        <div class="col-sm-6 devoured">
+            {{#each burgers}}
+                {{#if this.devoured}}
+                <l1>
+                    <p>{{this.id}}<span class="label">Name of Pizza: </span>{{this.burger_name}}</p>
+                </l1>
+                {{/if}}
+            {{/each}}
+        </div>
+    </div>
 
     <form>
         <div class="form row">
@@ -37,6 +56,7 @@
     $(function(){
 
         $(".devour-button").on("click", function(event) {
+
             var id = $(this).data("id");
             var devoured = $(this).data("devoured");
 
@@ -53,7 +73,6 @@
             }).then(
                 function() {
                     console.log("Yum");
-
                     location.reload();
                 }
             );
@@ -75,7 +94,6 @@
             }).then(
                 function() {
                     console.log("created new burger");
-
                     location.reload();
                 }
             );
