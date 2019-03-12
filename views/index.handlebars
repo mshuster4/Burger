@@ -1,23 +1,19 @@
     
+
 <div class="container">
 
-    <div class="row">
-        <div class="col-sm-12 text-center">
-            <h1>Pizza Passport</h1>
-        </div>
+    <div class="jumbotron text-center">
+        <h1>Pizza Passport</h1>
     </div>
 
     <div class="row">
         <div class="col-sm-6">
-
-            <ul>
+            <ul class="list-group-flush">
+                <h2>Eat</h3>
             {{#each pizza}}
                 {{#unless this.devoured}}
-                <li>
-                    <p>
-                        {{this.id}}: <span>Pizza Name: </span>{{this.pizza_name}} 
-                        <button class="devour-button" data-id="{{id}}" data-devoured="{{devoured}}">Devour it!</button>
-                    </p>
+                <li class="list-group-item not-devoured">
+                    {{this.id}}. {{this.pizza_name}} <button type="button" class="btn devour-button float-right" data-id="{{id}}" data-devoured="{{devoured}}">Devour</button>
                 </li>
                 {{/unless}}
             {{/each}}
@@ -26,26 +22,35 @@
         </div>
 
         <div class="col-sm-6 devoured">
+            <ul class="list-group-flush">
+                <h2>Ate</h3>
             {{#each pizza}}
                 {{#if this.devoured}}
-                <l1>
-                    <p>{{this.id}}: <span class="label">Name of Pizza: </span>{{this.pizza_name}}</p>
-                </l1>
+                <li class="list-group-item">
+                    {{this.id}}. {{this.pizza_name}}
+                </li>
                 {{/if}}
             {{/each}}
+            </ul>
         </div>
     </div>
 
     <form>
-        <div class="form row">
-            <div class="col-sm-12">
-                <input type="text" id="pizza" class="form-control" placeholder="">
+        <div class="row">
+
+            <div class="col-sm-3"></div>
+
+            <div class="col-sm-6">
+                <textarea class="form-control" id="pizza" class="form-control" placeholder="" rows="2"></textarea>
             </div>
+
+            <div class="col-sm-3"></div>
+
         </div>
     </form>
 
     <div class="row">
-        <div class="col-sm-12">
+        <div class="col text-center">
             <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
         </div>
     </div>
