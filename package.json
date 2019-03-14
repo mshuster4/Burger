@@ -1,7 +1,7 @@
 {
-  "name": "pizza",
+  "name": "burger",
   "version": "1.0.0",
-  "description": "Restaurant pizza logger app",
+  "description": "Restaurant burger logger app",
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
