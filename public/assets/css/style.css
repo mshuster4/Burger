@@ -28,6 +28,13 @@ h2 {
     font-style: normal;
 }
 
+p {
+    color: #fcefdf;
+    font-family: houschka-rounded, sans-serif;
+    font-weight: 600;
+    font-style: normal;
+}
+
 .jumbotron {
     background-image: url("images/pizza-banner-3.jpg");
     background-size: cover;

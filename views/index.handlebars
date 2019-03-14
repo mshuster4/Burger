@@ -9,7 +9,7 @@
     <div class="row">
         <div class="col-md-6 col-sm-12">
             <ul class="list-group-flush">
-                <h2>Eat</h3>
+                <h2>Eat</h2>
             {{#each pizza}}
                 {{#unless this.devoured}}
                 <li class="list-group-item not-devoured">
@@ -23,7 +23,7 @@
 
         <div class=" col-md-6 col-sm-12 devoured">
             <ul class="list-group-flush">
-                <h2>Ate</h3>
+                <h2>Ate</h2>
             {{#each pizza}}
                 {{#if this.devoured}}
                 <li class="list-group-item">
@@ -52,6 +52,12 @@
     <div class="row">
         <div class="col text-center">
             <button id="submitButton" type="submit" class="btn btn-primary">Submit</button>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 text-center">
+            <p>Type the name of a pizza you would like to eat and then hit the Submit Button.</p>
         </div>
     </div>
 
