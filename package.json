@@ -1,24 +1,26 @@
 {
   "name": "burger",
   "version": "1.0.0",
-  "description": "Restaurant burger logger app",
+  "description": "Restaurant pizza logger app",
   "main": "server.js",
+  "dependencies": {
+    "express-handlebars": "^3.0.2",
+    "express": "^4.16.4",
+    "mysql": "^2.16.0"
+  },
+  "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mshuster4/Burger.git"
+    "url": "git+https://github.com/mshuster4/Pizza-Passport.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mshuster4/Burger/issues"
+    "url": "https://github.com/mshuster4/Pizza-Passport/issues"
   },
-  "homepage": "https://github.com/mshuster4/Burger#readme",
-  "dependencies": {
-    "express": "^4.16.4",
-    "express-handlebars": "^3.0.2",
-    "mysql": "^2.16.0"
-  }
+  "homepage": "https://github.com/mshuster4/Pizza-Passport#readme"
 }
