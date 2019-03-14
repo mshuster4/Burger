@@ -1,9 +1,10 @@
 {
-  "name": "burger",
+  "name": "pizza",
   "version": "1.0.0",
-  "description": "Restaurant burger logger app",
+  "description": "Restaurant pizza logger app",
   "main": "server.js",
   "scripts": {
+    "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -1,2 +1,2 @@
-# Burger
-Restaurant burger logger app
+# Pizza Passport
+Restaurant pizza logger app
