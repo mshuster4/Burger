@@ -1,2 +1,3 @@
 # Pizza Passport
-Restaurant pizza logger app
+This application allows user to log and track pizzas they would like to eat 
+
